@@ -10,7 +10,19 @@ module.exports = {
 
   module: {
     loaders: [
-      {test: /src(\\|\/).+\.jsx?$/, exclude: /node_modules/, loader: 'babel'}
+      {
+        test: /src(\\|\/).+\.jsx?$/, 
+        exclude: /node_modules/, 
+        loader: 'babel'
+      },
+      {
+        test: /\.(css)$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?size=8192'
+      }
     ]
   }
 };
